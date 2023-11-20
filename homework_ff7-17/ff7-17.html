@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    h1 {
+      font-weight: 500;
+    }
+    
+    p {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    #bg::before {
+      content: '';
+      width: 1920px;
+      height: 930px;
+      background-image: url(./bg-full.jpg);
+      background-size: cover;
+      filter: brightness(50%);
+      z-index: -1;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    #bg {
+      display: flex;
+      width: 1920px;
+      height: 930px;
+      justify-content:center;
+      align-items: center;
+    }
+
+
+    #container {
+      display: flex;
+      width: 75%;
+      height: 75%;
+      border: 1px solid #999;
+      flex-wrap: wrap;
+    }
+
+    #product::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-image: url(./main.jpg);
+      background-size: cover;
+      background-position: center;
+      filter: brightness(50%);
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #product {
+      box-sizing: border-box;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+      text-align: center;
+      color: #FFF;
+      padding: 0 100px;
+      position: relative;
+    }
+
+    #product img {
+      width: 200px;
+    }
+
+    #character {
+      width: 50%;
+      height: 100%;
+    }
+    
+    
+    #character1 {
+      box-sizing: border-box;
+      padding: 80px 275px 80px 40px;
+      width: 100%;
+      height: 50%;
+      background: #999;
+      background-image: url(./cloud.png);
+      background-size: 300px;
+      background-repeat: no-repeat;
+      background-position: right bottom;
+    }
+
+    #character2 {
+      box-sizing: border-box;
+      padding: 80px 30px 80px 300px;
+      width: 100%;
+      height: 50%;
+      background: #000;
+      background-image: url(./tifa.png);
+      background-size: 300px;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      color: #FFF;
+    }
+  </style>
+</head>
+<body>
+  <div id="bg">
+    <div id="container">
+      <div id="product">
+        <img src="./ps4-ff7.png">
+        <h1>AVAILABLE NOW</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis itaque a ex fuga harum impedit! Reprehenderit quas minima consequatur earum dignissimos vel vitae, voluptates, impedit deleniti tenetur harum temporibus corrupti!</p>
+      </div>
+      <div id="character">
+        <div id="character1">
+          <h1>Cloud</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil dolorum voluptatum repellendus alias animi blanditiis voluptatibus possimus odio, adipisci cupiditate inventore ipsam cumque quas. Dolores amet reprehenderit quae reiciendis unde.</p>
+        </div>
+        <div id="character2">
+          <h1>Tifa</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil dolorum voluptatum repellendus alias animi blanditiis voluptatibus possimus odio, adipisci cupiditate inventore ipsam cumque quas. Dolores amet reprehenderit quae reiciendis unde.</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
