@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chinese_chess_17</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "標楷體";
+    }
+    
+    body {
+      display: flex;
+      height: 930px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .countainer {
+      width: 1500px;
+      height: 900px;
+      display: flex;
+      /* background: #aaa; */
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .couplet {
+      /* display: flex; */
+      writing-mode: vertical-lr;
+      font-size: 40px;
+      margin: 20px;
+    }
+    
+    .checkerboard {
+      width: 750px;
+      height: 780px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #000;
+      position: relative;
+    }
+
+    .boxes {
+      width: 600px;
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid #000;
+    }
+
+    .box {
+      box-sizing: border-box;
+      width: 75px;
+      height: 75px;
+      border: 1px solid #000;
+      /* margin: -1px; */
+    }
+
+    .line {
+      box-sizing: border-box;
+      width: 75px;
+      height: 75px;
+    }
+    .backslash {
+      position: relative;
+    }
+
+    .backslash::after {
+      content: '';
+      width: 209px;
+      border: 1px solid #000;
+      position: absolute;
+      transform: rotate(45deg);
+      transform-origin: left;
+      top: -1px;
+    }
+
+    .slash {
+      position: relative;
+    }
+
+    .slash::after {
+      content: '';
+      width: 209px;
+      border: 1px solid #000;
+      position: absolute;
+      transform: rotate(-45deg);
+      transform-origin: right;
+      top: -1px;
+      right: -1px; 
+    }
+
+    .centerbox {
+      box-sizing: border-box;
+      width: 602px;
+      height: 75px;
+      border-left: 2px solid #000;
+      border-right: 2px solid #000;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 46px;
+    }
+
+    .chessPieces1 {
+      width: 675px;
+      height: 375px;
+      display: flex;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 15px;
+    }
+
+    .chessPieces2 {
+      width: 675px;
+      height: 375px;
+      display: flex;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 390px;
+      color: red;
+    }
+
+    .chessPiece {
+      box-sizing: border-box;
+      border-radius: 50%;
+      width: 59px;
+      height: 59px;
+      margin: 8px;
+      text-align: center;
+      line-height: 59px;
+      font-size: 42px;
+    }
+
+    .show {
+      border: 1px solid #000;
+      background: #FFF;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="countainer">
+    <div class="couplet">棋盤裡，車無輪，馬無韁，叫聲將軍提防提防</div>
+    <div class="checkerboard">
+      <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box backslash"></div>
+        <div class="box slash"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="chessPieces1">
+        <div class="chessPiece show">車</div>
+        <div class="chessPiece show">馬</div>
+        <div class="chessPiece show">象</div>
+        <div class="chessPiece show">士</div>
+        <div class="chessPiece show">將</div>
+        <div class="chessPiece show">士</div>
+        <div class="chessPiece show">象</div>
+        <div class="chessPiece show">馬</div>
+        <div class="chessPiece show">車</div>
+
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">包</div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">包</div>
+        <div class="chessPiece"></div>
+
+        <div class="chessPiece show">卒</div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">卒</div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">卒</div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">卒</div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">卒</div>
+
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+      </div>
+      <div class="centerbox">
+        <span>楚河</span>
+        <span>漢界</span>
+      </div>
+      <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box backslash"></div>
+        <div class="box slash"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="chessPieces2">
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+
+        <div class="chessPiece show">兵</div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">兵</div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">兵</div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">兵</div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">兵</div>
+
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">炮</div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece show">炮</div>
+        <div class="chessPiece"></div>
+
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+        <div class="chessPiece"></div>
+
+        <div class="chessPiece show">俥</div>
+        <div class="chessPiece show">傌</div>
+        <div class="chessPiece show">相</div>
+        <div class="chessPiece show">仕</div>
+        <div class="chessPiece show">帥</div>
+        <div class="chessPiece show">仕</div>
+        <div class="chessPiece show">相</div>
+        <div class="chessPiece show">傌</div>
+        <div class="chessPiece show">俥</div>
+      </div>
+
+    </div>
+    <div class="couplet">圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</div>
+  </div>
+</body>
+</html>
